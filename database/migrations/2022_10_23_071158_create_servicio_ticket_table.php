@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEstadoTicket extends Migration
+class CreateServicioTicketTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateEstadoTicket extends Migration
      */
     public function up()
     {
-        Schema::create('estado_ticket', function (Blueprint $table) {
-            $table->smallIncrements('id_ticket_status');
-            $table->string('name');
-            $table->string('description');
-            $table->tinyInteger('status');
+        Schema::create('servicio_ticket', function (Blueprint $table) {
+            $table->smallIncrements('id_servicio_ticket');
+            $table->string('nombre');
+            $table->string('descripcion');
 /*             $table->dateTime('created_at');
  */            $table->timestamps();
         });
@@ -30,6 +29,6 @@ class CreateEstadoTicket extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('estado_ticket');
+        Schema::dropIfExists('servicio_ticket');
     }
 }

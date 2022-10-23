@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAreaTicket extends Migration
+class CreatePrioridadTicketTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateAreaTicket extends Migration
      */
     public function up()
     {
-        Schema::create('area_ticket', function (Blueprint $table) {
-            $table->integerIncrements('id_area');
+        Schema::create('prioridad_ticket', function (Blueprint $table) {
+            $table->smallIncrements('id_prioridad');
             $table->string('nombre');
             $table->string('descripcion');
+            $table->tinyInteger('status');
 /*             $table->dateTime('created_at');
  */            $table->timestamps();
         });
@@ -29,6 +30,6 @@ class CreateAreaTicket extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('area_ticket');
+        Schema::dropIfExists('prioridad_ticket');
     }
 }

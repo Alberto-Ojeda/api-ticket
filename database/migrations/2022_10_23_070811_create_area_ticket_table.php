@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateServicioTicket extends Migration
+class CreateAreaTicketTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class CreateServicioTicket extends Migration
      */
     public function up()
     {
-        Schema::create('servicio_ticket', function (Blueprint $table) {
-            $table->smallIncrements('id_servicio_ticket');
+        Schema::create('area_ticket', function (Blueprint $table) {
+            $table->integerIncrements('id_area');
             $table->string('nombre');
             $table->string('descripcion');
 /*             $table->dateTime('created_at');
@@ -29,6 +29,6 @@ class CreateServicioTicket extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('servicio_ticket');
+        Schema::dropIfExists('area_ticket');
     }
 }

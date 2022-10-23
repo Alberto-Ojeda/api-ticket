@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTipoEquipo extends Migration
+class CreateEstadoTicketTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,13 @@ class CreateTipoEquipo extends Migration
      */
     public function up()
     {
-        Schema::create('tipo_equipo', function (Blueprint $table) {
-            $table->smallIncrements('id_tipo_equipo');
-            $table->string('nombre');
-            $table->string('descripcion');
+        Schema::create('estado_ticket', function (Blueprint $table) {
+            $table->smallIncrements('id_ticket_status');
+            $table->string('name');
+            $table->string('description');
             $table->tinyInteger('status');
 /*             $table->dateTime('created_at');
- */
-            $table->timestamps();
+ */            $table->timestamps();
         });
     }
 
@@ -31,6 +30,6 @@ class CreateTipoEquipo extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipo_equipo');
+        Schema::dropIfExists('estado_ticket');
     }
 }

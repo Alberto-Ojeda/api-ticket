@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\tipotickets\tipoTicketsController;
+use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,7 +14,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::group(['Middleware' => 'auth:api'], function(){
+/*     Route::get('/ticket', [tipoTicketsController::class, 'showTypeticket']); */
+    Route::apiResource(name:'showTypeticket', controller:'tipoTicketsController');
+});
 Route::get('/', function () {
     return view('welcome');
 });
+
