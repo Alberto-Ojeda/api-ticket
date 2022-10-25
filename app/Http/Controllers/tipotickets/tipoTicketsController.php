@@ -10,6 +10,11 @@ class tipoTicketsController extends Controller
 {
 public function showTypeticket(){
     $tickets= tipoTickets::all();
-    return $tickets;
+
+    $token = $tickets->createToken('auth_token')->plainTextToken;
+    return response()->json([
+        'access_token'=>$token,
+        'token_typen' =>'Bearer'
+    ]);
 }
 }

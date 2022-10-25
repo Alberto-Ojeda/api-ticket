@@ -14,10 +14,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::group(['Middleware' => 'auth:api'], function(){
-/*     Route::get('/ticket', [tipoTicketsController::class, 'showTypeticket']); */
-    Route::apiResource(name:'showTypeticket', controller:'tipoTicketsController');
-});
+Route::get('/ticket' , [tipoTicketsController::class, 'showTypeticket']);
+
 Route::get('/', function () {
     return view('welcome');
 });
