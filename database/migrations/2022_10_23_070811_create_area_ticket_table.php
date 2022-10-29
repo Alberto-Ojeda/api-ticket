@@ -13,10 +13,10 @@ class CreateAreaTicketTable extends Migration
      */
     public function up()
     {
-        Schema::create('area_ticket', function (Blueprint $table) {
+        Schema::create('area_tickets', function (Blueprint $table) {
             $table->integerIncrements('id_area');
             $table->string('nombre');
-            $table->string('descripcion');
+            $table->string('descripcion')->nullable();
 /*             $table->dateTime('created_at');
  */            $table->timestamps();
         });

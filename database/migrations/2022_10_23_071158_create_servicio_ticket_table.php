@@ -13,10 +13,12 @@ class CreateServicioTicketTable extends Migration
      */
     public function up()
     {
-        Schema::create('servicio_ticket', function (Blueprint $table) {
+        Schema::create('servicio_tickets', function (Blueprint $table) {
             $table->smallIncrements('id_servicio_ticket');
             $table->string('nombre');
-            $table->string('descripcion');
+            $table->string('descripcion')->nullable() ;
+            $table->tinyInteger('status');
+
 /*             $table->dateTime('created_at');
  */            $table->timestamps();
         });

@@ -8,8 +8,8 @@ use Illuminate\Http\Request;
 
 class tipoTicketsController extends Controller
 {
-public function showTypeticket(){
-    $tickets= tipoTickets::all();
-    return $tickets;
-}
+    public function showTypeticket(){
+        $tickets= tipoTickets::all();
+        return $tickets;
+    }
 }

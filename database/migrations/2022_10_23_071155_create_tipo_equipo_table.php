@@ -13,10 +13,10 @@ class CreateTipoEquipoTable extends Migration
      */
     public function up()
     {
-        Schema::create('tipo_equipo', function (Blueprint $table) {
+        Schema::create('tipo_equipos', function (Blueprint $table) {
             $table->smallIncrements('id_tipo_equipo');
             $table->string('nombre');
-            $table->string('descripcion');
+            $table->string('descripcion')->nullable();
             $table->tinyInteger('status');
 /*             $table->dateTime('created_at');
  */

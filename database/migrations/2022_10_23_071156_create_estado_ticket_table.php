@@ -13,7 +13,7 @@ class CreateEstadoTicketTable extends Migration
      */
     public function up()
     {
-        Schema::create('estado_ticket', function (Blueprint $table) {
+        Schema::create('estado_tickets', function (Blueprint $table) {
             $table->smallIncrements('id_ticket_status');
             $table->string('name');
             $table->string('description');
