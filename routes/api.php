@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\area\areaTicketsController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\estadoTickets\estadoTicketsController;
 use App\Http\Controllers\tickets\ticketsController;
@@ -26,12 +27,29 @@ Route::post('/register', [AuthController::class, 'register'] );
 Route::post('/login', [AuthController::class, 'login'] );
 
 Route::get('/ticket' , [tipoTicketsController::class, 'showTypeticket']);
-Route::get('/ticketService' , [ticketServiceController::class, 'showServiceTicket']);
-Route::get('/ticketStatus',[estadoTicketsController::class,'showEstadoTicket']);
+
+Route::prefix('area')->group(function () {
+    Route::get('/show' , [areaTicketsController::class, 'showAreaTicket']);
+    Route::post('/register' , [areaTicketsController::class, 'register']);
+
+});
 
 
-Route::post('/ticketregister', [ticketsController::class, 'register'] );
-Route::post('/ticketupdate/{id}', [ticketsController::class, 'update'] );
+Route::prefix('servicio')->group(function () {
+    Route::get('/show' , [ticketServiceController::class, 'showServiceTicket']);
+});
+
+
+Route::prefix('estado')->group(function () {
+    Route::get('/show',[estadoTicketsController::class,'showEstadoTicket']);
+});
+
+
+
+Route::prefix('tickets')->group(function () {
+Route::post('/register', [ticketsController::class, 'register'] );
+Route::post('/update/{id}', [ticketsController::class, 'update'] );
+});
 
 
 

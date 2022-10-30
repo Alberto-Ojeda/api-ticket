@@ -12,6 +12,7 @@ class areaTickets extends Model
         'id_area',
         'nombre',
         'descripcion',
+        'status',
         'created_at',
         'updated_at',
 

@@ -16,7 +16,9 @@ class CreateAreaTicketTable extends Migration
         Schema::create('area_tickets', function (Blueprint $table) {
             $table->integerIncrements('id_area');
             $table->string('nombre');
+
             $table->string('descripcion')->nullable();
+            $table->tinyInteger('status');
 /*             $table->dateTime('created_at');
  */            $table->timestamps();
         });

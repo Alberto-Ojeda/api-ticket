@@ -18,24 +18,28 @@ class areaTicketsSeeder extends Seeder
         DB::table('area_tickets')->insert([
             'id_area' => '1',
             'nombre' => 'Desarrollo',
+            'status' => '1',
             'created_at'=>Carbon::now(),
             'updated_at'=>Carbon::now(),
         ]);
         DB::table('area_tickets')->insert([
             'id_area' => '2',
             'nombre' => 'finanzas',
+            'status' => '1',
             'created_at'=>Carbon::now(),
             'updated_at'=>Carbon::now(),
         ]);
         DB::table('area_tickets')->insert([
             'id_area' => '3',
             'nombre' => 'soporte',
+            'status' => '1',
             'created_at'=>Carbon::now(),
             'updated_at'=>Carbon::now(),
         ]);
         DB::table('area_tickets')->insert([
             'id_area' => '4',
             'nombre' => 'recursos humanos',
+            'status' => '1',
             'created_at'=>Carbon::now(),
             'updated_at'=>Carbon::now(),
         ]);      }
