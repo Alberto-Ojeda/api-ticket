@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\area\areaTicketsController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\empleados\empleadosController;
 use App\Http\Controllers\estadoTickets\estadoTicketsController;
 use App\Http\Controllers\tickets\ticketsController;
 use App\Http\Controllers\ticketService\ticketService;
@@ -27,6 +28,13 @@ Route::post('/register', [AuthController::class, 'register'] );
 Route::post('/login', [AuthController::class, 'login'] );
 
 Route::get('/ticket' , [tipoTicketsController::class, 'showTypeticket']);
+
+Route::prefix('empleado')->group(function () {
+    Route::get('/show' , [empleadosController::class, 'showEmpleados']);
+    Route::post('/register' , [empleadosController::class, 'register']);
+    Route::post('/disable/{id}/{status}' , [empleadosController::class, 'disable']);
+});
+
 
 Route::prefix('area')->group(function () {
     Route::get('/show' , [areaTicketsController::class, 'showAreaTicket']);

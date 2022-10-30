@@ -13,7 +13,7 @@ class empleadosRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,14 @@ class empleadosRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+        /* 'id_empleado', */
+        'nombre' => 'required',
+        'apellido' => 'required',
+        'status' => 'required',
+        'id_equipo' => 'required',
+        'created_by' => 'required',
+        'updated_by' => 'required',
+
         ];
     }
 }
