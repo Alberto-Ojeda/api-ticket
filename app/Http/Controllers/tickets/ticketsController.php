@@ -14,4 +14,12 @@ class ticketsController extends Controller
         $ticketsCreate = tickets::create($request->validated());
         return $ticketsCreate;
     }
+
+    public function update(ticketsRequest $request, $id){
+        tickets::where('id_ticket', $id)->update
+        ([ 'id_ticket_status' => $request->input('id_ticket_status')]);
+        return 'actualizado correctamente';
+
+
+    }
 }

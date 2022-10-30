@@ -27,8 +27,11 @@ Route::post('/login', [AuthController::class, 'login'] );
 
 Route::get('/ticket' , [tipoTicketsController::class, 'showTypeticket']);
 Route::get('/ticketService' , [ticketServiceController::class, 'showServiceTicket']);
-Route::post('/ticketregister', [ticketsController::class, 'register'] );
 Route::get('/ticketStatus',[estadoTicketsController::class,'showEstadoTicket']);
+
+
+Route::post('/ticketregister', [ticketsController::class, 'register'] );
+Route::post('/ticketupdate/{id}', [ticketsController::class, 'update'] );
 
 
 
