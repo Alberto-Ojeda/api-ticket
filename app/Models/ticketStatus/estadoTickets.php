@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Models\ticketService;
+namespace App\Models\ticketStatus;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class servicioTickets extends Model
+class estadoTickets extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'id_servicio_ticket',
-        'nombre',
-        'descripcion',
+        'id_ticket_status',
+        'name',
+        'description',
         'status',
         'created_at',
         'updated_at',

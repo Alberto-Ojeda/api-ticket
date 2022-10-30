@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\estadoTickets\estadoTicketsController;
 use App\Http\Controllers\tickets\ticketsController;
 use App\Http\Controllers\ticketService\ticketService;
 use App\Http\Controllers\ticketService\ticketServiceController;
@@ -27,6 +28,9 @@ Route::post('/login', [AuthController::class, 'login'] );
 Route::get('/ticket' , [tipoTicketsController::class, 'showTypeticket']);
 Route::get('/ticketService' , [ticketServiceController::class, 'showServiceTicket']);
 Route::post('/ticketregister', [ticketsController::class, 'register'] );
+Route::get('/ticketStatus',[estadoTicketsController::class,'showEstadoTicket']);
+
+
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

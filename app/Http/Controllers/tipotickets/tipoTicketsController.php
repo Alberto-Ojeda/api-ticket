@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class tipoTicketsController extends Controller
 {
     public function showTypeticket(){
-        $tickets= tipoTickets::all();
+        $tickets= tipoTickets::all()->where('status',1);
         return $tickets;
     }
 }
