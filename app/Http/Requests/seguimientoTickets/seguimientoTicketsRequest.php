@@ -13,7 +13,7 @@ class seguimientoTicketsRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,15 @@ class seguimientoTicketsRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'id_seguimiento_ticket'=> 'required',
+            'id_ticket'=> 'required',
+            'id_equipo'=> 'required',
+            'id_empleado'=> 'required',
+            'comentario'=> 'required',
+            'status'=> 'required',
+            'created_at'=> 'required',
+            'updated_at'=> 'required',
+            
         ];
     }
 }
