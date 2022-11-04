@@ -20,9 +20,9 @@ class CreateTicketsTable extends Migration
             $table->date('fecha_inicio');
             $table->date('fecha_cumplimiento');
             $table->date('fecha_expiracion');
-            $table->unsignedInteger('id_equipo');
+            $table->unsignedInteger('id_equipo')->nullable();
             $table->foreign('id_equipo')->references('id_equipo')->on('equipos')->onDelete('cascade');
-            $table->unsignedInteger('id_empleado');
+            $table->unsignedInteger('id_empleado')->nullable();
             $table->foreign('id_empleado')->references('id_empleado')->on('empleados')->onDelete('cascade');
             $table->unsignedSmallInteger('id_tipo_tickets');
             $table->foreign('id_tipo_tickets')->references('id_tipo_tickets')->on('tipo_tickets')->onDelete('cascade');

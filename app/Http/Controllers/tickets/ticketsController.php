@@ -17,9 +17,15 @@ class ticketsController extends Controller
 
     public function update(ticketsRequest $request, $id){
         tickets::where('id_ticket', $id)->update
-        ([ 'id_ticket_status' => $request->input('id_ticket_status')]);
+        ([ 'id_ticket_status' => $request->input('id_ticket_status'),
+        'updated_by' => $request->input('updated_by')]);
         return 'actualizado correctamente';
+    }
 
-
+    public function show(){
+/*         all() */
+/* metodo para traer  los tickets de forma ascendente de esta forma se traera el mas actual */
+        $tickets= tickets::where('id_ticket_status','<',3)->orderBy('fecha_expiracion','asc')->get();
+        return $tickets;
     }
 }

@@ -57,6 +57,7 @@ Route::prefix('estado')->group(function () {
 Route::prefix('tickets')->group(function () {
 Route::post('/register', [ticketsController::class, 'register'] );
 Route::post('/update/{id}', [ticketsController::class, 'update'] );
+Route::get('/show',[ticketsController::class,'show']);
 });
 
 
