@@ -24,6 +24,8 @@ class DatabaseSeeder extends Seeder
         $this->call(estatusTicketSeeder::class);
         $this->call(empleadoSeeder::class);
         $this->call(prioridadSeeder::class);
+        $this->call(ticketsSeeder::class);
+        $this->call(seguimientoTicketsSeeder::class);
         // \App\Models\User::factory(10)->create();
     }
 }

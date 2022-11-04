@@ -4,6 +4,7 @@ use App\Http\Controllers\area\areaTicketsController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\empleados\empleadosController;
 use App\Http\Controllers\estadoTickets\estadoTicketsController;
+use App\Http\Controllers\seguimientoTickets\seguimientoTicketsController;
 use App\Http\Controllers\tickets\ticketsController;
 use App\Http\Controllers\ticketService\ticketService;
 use App\Http\Controllers\ticketService\ticketServiceController;
@@ -60,6 +61,11 @@ Route::post('/update/{id}', [ticketsController::class, 'update'] );
 Route::get('/show',[ticketsController::class,'show']);
 });
 
+Route::prefix('seguimientoTicket')->group(function(){
+Route::get('/show/{idTicket}',[seguimientoTicketsController::class,'show']);
+Route::post('/register',[seguimientoTicketsController::class,'register']);
+
+});
 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

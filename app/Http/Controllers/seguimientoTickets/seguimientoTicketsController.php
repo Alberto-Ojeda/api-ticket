@@ -16,7 +16,7 @@ class seguimientoTicketsController extends Controller
 
     public function show($idTicket){
         $tickets= seguimientoTickets::where('id_ticket','=',$idTicket)->orderBy('id_seguimiento_ticket','asc')->get();
-
+        return $tickets;
     }
 
 }

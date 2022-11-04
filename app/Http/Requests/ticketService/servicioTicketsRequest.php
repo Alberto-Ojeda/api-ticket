@@ -13,7 +13,7 @@ class servicioTicketsRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,13 @@ class servicioTicketsRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+        'id_servicio_ticket' => 'required',
+        'nombre' => 'required',
+        'descripcion' => 'required',
+        'status' => 'required',
+        'created_at' => 'required',
+        'updated_at' => 'required',
+
         ];
     }
 }

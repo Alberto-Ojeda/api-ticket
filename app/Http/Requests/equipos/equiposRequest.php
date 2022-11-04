@@ -13,7 +13,7 @@ class equiposRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,16 @@ class equiposRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'id_equipo'=> 'required',
+            'nombre'=> 'required',
+            'status'=> 'required',
+            'id_tipo_equipo'=> 'required',
+            'id_tipo_area'=> 'required',
+            'created_by'=> 'required',
+            'updated_by'=> 'required',
+            'created_at'=> 'required',
+            'updated_at'=> 'required',
+
         ];
     }
 }

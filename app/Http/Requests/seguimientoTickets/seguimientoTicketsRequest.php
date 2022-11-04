@@ -26,13 +26,12 @@ class seguimientoTicketsRequest extends FormRequest
         return [
             'id_seguimiento_ticket'=> 'required',
             'id_ticket'=> 'required',
-            'id_equipo'=> 'required',
-            'id_empleado'=> 'required',
+            'id_equipo'=> 'nullable',
+            'id_empleado'=> 'nullable',
             'comentario'=> 'required',
             'status'=> 'required',
-            'created_at'=> 'required',
-            'updated_at'=> 'required',
-            
+
+
         ];
     }
 }

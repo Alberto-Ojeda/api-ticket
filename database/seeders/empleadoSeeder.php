@@ -26,5 +26,29 @@ class empleadoSeeder extends Seeder
             'created_at'=>Carbon::now(),
             'updated_at'=>Carbon::now(),
         ]);
+
+        DB::table('empleados')->insert([
+            'id_empleado' => '2',
+            'nombre' => 'francisco',
+            'apellido' => 'sanchez',
+            'status' =>'1',
+            'id_equipo' => '1',
+            'created_by' =>'1',
+            'updated_by' => '1',
+            'created_at'=>Carbon::now(),
+            'updated_at'=>Carbon::now(),
+        ]);
+
+        DB::table('empleados')->insert([
+            'id_empleado' => '3',
+            'nombre' => 'Guillermo',
+            'apellido' => 'sanchez',
+            'status' =>'1',
+            'id_equipo' => '2',
+            'created_by' =>'1',
+            'updated_by' => '1',
+            'created_at'=>Carbon::now(),
+            'updated_at'=>Carbon::now(),
+        ]);
     }
 }

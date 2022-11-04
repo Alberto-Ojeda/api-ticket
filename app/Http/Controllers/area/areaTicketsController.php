@@ -20,4 +20,9 @@ class areaTicketsController extends Controller
         $ticketsCreate = areaTickets::create($request->validated());
         return $ticketsCreate;
     }
+
+    public function disable($id, $status){
+        areaTickets::where('id_area', $id)->update([ 'status' => $status ]);
+        return  'El area se a desactivado exitosamente';
+    }
 }
