@@ -4,6 +4,7 @@ use App\Http\Controllers\area\areaTicketsController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\empleados\empleadosController;
 use App\Http\Controllers\estadoTickets\estadoTicketsController;
+use App\Http\Controllers\proveedores\proveedoresController;
 use App\Http\Controllers\seguimientoTickets\seguimientoTicketsController;
 use App\Http\Controllers\tickets\ticketsController;
 use App\Http\Controllers\ticketService\ticketService;
@@ -42,7 +43,11 @@ Route::prefix('area')->group(function () {
     Route::post('/register' , [areaTicketsController::class, 'register']);
 
 });
+Route::prefix('proveedores')->group(function () {
+     Route::get('/show' , [proveedoresController::class, 'show']);
+     Route::post('/register' , [proveedoresController::class, 'register']);
 
+});
 
 Route::prefix('servicio')->group(function () {
     Route::get('/show' , [ticketServiceController::class, 'showServiceTicket']);

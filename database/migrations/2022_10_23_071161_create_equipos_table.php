@@ -21,8 +21,8 @@ class CreateEquiposTable extends Migration
             $table->foreign('id_tipo_equipo')->references('id_tipo_equipo')->on('tipo_equipos')->onDelete('restrict');
             $table->unsignedInteger('id_tipo_area');
              $table->foreign('id_tipo_area')->references('id_area')->on('area_tickets')->onDelete('restrict');
-             $table->integer('created_by');
-            $table->integer('updated_by');
+             $table->integer('created_by')->references('id')->on('users')->onDelete('restrict');;
+            $table->integer('updated_by')->references('id')->on('users')->onDelete('restrict');;
 /*             $table->dateTime('created_at');
  */            $table->timestamps();
         });

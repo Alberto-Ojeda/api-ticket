@@ -15,9 +15,12 @@ class CreateseguimientoTicketsTable extends Migration
     {
         Schema::create('seguimiento_tickets', function (Blueprint $table) {
             $table->integerIncrements('id_seguimiento_ticket');
-            $table->integer('id_ticket')->references('id_ticket')->on('tickets')->onDelete('cascade');
-            $table->integer('id_equipo')->references('id_equipo')->on('equipos')->onDelete('cascade')->nullable();
-            $table->integer('id_empleado')->references('id_empleado')->on('equipos')->onDelete('cascade')->nullable()->nullable();
+            $table->unsignedinteger('id_ticket');
+            $table->foreign('id_ticket')->references('id_ticket')->on('tickets')->onDelete('cascade');
+            $table->unsignedInteger('id_equipo')->nullable();
+            $table->foreign('id_equipo')->references('id_equipo')->on('equipos')->onDelete('cascade');
+            $table->unsignedInteger('id_empleado')->nullable();
+            $table->foreign('id_empleado')->references('id_empleado')->on('empleados')->onDelete('cascade');
             $table->string('comentario');
             $table->tinyInteger('status');
             $table->timestamps();

@@ -28,6 +28,7 @@ class DatabaseSeeder extends Seeder
         $this->call(prioridadSeeder::class);
         $this->call(ticketsSeeder::class);
         $this->call(seguimientoTicketsSeeder::class);
+        $this->call(proveedores::class);
         // \App\Models\User::factory(10)->create();
     }
 }

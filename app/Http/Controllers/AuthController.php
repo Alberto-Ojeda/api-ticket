@@ -15,6 +15,7 @@ class AuthController extends Controller
             'password'=>'required'
 
         ]);
+
         $user = User::create([
             'name'=> $validateData['name'],
             'email'=> $validateData['email'],
@@ -44,4 +45,18 @@ class AuthController extends Controller
             'token_type' => 'Bearer'
         ]);
     }
+
+
+
+
+/* tabla provedores 
+api key-- exista, activo, ok generar token 
+api key status disable  servicios bloqueados
+
+token */
+    /* usuario provedor prueba ip, postman datos de origen */
+/* creación del token */
+/* creacion de la api key */
+/* se autentica y se consume un servicio para consumir el token */
+/* 3 min de vida del token  */
 }

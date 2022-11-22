@@ -34,6 +34,7 @@ class CreateTicketsTable extends Migration
             $table->foreign('id_ticket_status')->references('id_ticket_status')->on('estado_tickets')->onDelete('cascade');
             $table->unsignedSmallInteger('id_prioridad');
             $table->foreign('id_prioridad')->references('id_prioridad')->on('prioridad_tickets')->onDelete('cascade');
+            
             $table->integer('created_by');
             $table->integer('updated_by');
 /*             $table->dateTime('created_at'); */
