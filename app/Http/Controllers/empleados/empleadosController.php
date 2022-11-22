@@ -24,4 +24,5 @@ class empleadosController extends Controller
         empleados::where('id_empleado', $id)->update([ 'status' => $status ]);
         return  ' empleado dado de baja exitosamente ';
     }
+    
 }

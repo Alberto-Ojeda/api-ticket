@@ -6,6 +6,7 @@ use App\Http\Controllers\area\areaTicket;
 use App\Http\Controllers\equipos\equipos;
 use App\Models\tipotickets\tipoTickets;
 use Illuminate\Database\Seeder;
+use Spatie\Permission\Models\Permission;
 
 class DatabaseSeeder extends Seeder
 {
@@ -26,6 +27,7 @@ class DatabaseSeeder extends Seeder
         $this->call(prioridadSeeder::class);
         $this->call(ticketsSeeder::class);
         $this->call(seguimientoTicketsSeeder::class);
+        $this->call(PermissionsRoleSeeder::class);
         // \App\Models\User::factory(10)->create();
     }
 }
