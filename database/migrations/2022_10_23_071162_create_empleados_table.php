@@ -15,8 +15,10 @@ class CreateEmpleadosTable extends Migration
     {
         Schema::create('empleados', function (Blueprint $table) {
             $table->integerIncrements('id_empleado');
+            $table->string('username');
             $table->string('nombre');
             $table->string('apellido');
+            $table->string('password');
             $table->tinyInteger('status');
             $table->unsignedInteger('id_equipo');
             $table->foreign('id_equipo')->references('id_equipo')->on('equipos')->onDelete('cascade');

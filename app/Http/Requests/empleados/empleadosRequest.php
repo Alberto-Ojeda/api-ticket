@@ -25,8 +25,10 @@ class empleadosRequest extends FormRequest
     {
         return [
         /* 'id_empleado', */
+        'username'=> 'required',
         'nombre' => 'required',
         'apellido' => 'required',
+        'password' => 'required',
         'status' => 'required',
         'id_equipo' => 'required',
         'created_by' => 'required',
