@@ -10,7 +10,9 @@ use App\Http\Controllers\tickets\ticketsController;
 use App\Http\Controllers\ticketService\ticketService;
 use App\Http\Controllers\ticketService\ticketServiceController;
 use App\Http\Controllers\tipotickets\tipoTicketsController;
+use App\Http\Controllers\tokenProveedoresController;
 use App\Models\ticketService\servicioTickets;
+use App\Models\tokenProveedores\tokenProveedores;
 use GuzzleHttp\Psr7\Uri;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -46,13 +48,18 @@ Route::prefix('area')->group(function () {
 Route::prefix('proveedores')->group(function () {
      Route::get('/show' , [proveedoresController::class, 'show']);
      Route::post('/register' , [proveedoresController::class, 'register']);
-
+    Route::get('/disable/{id}/{status}',[proveedoresController::class,'disable']);
 });
+
 
 Route::prefix('servicio')->group(function () {
-    Route::get('/show' , [ticketServiceController::class, 'showServiceTicket']);
+    Route:: get('/show' , [ticketServiceController::class, 'showServiceTicket']);
 });
 
+Route:: prefix('token')->group(function(){
+    Route:: get('/create/{id}', [tokenProveedoresController::class,'creationToken']);
+
+});
 
 Route::prefix('estado')->group(function () {
     Route::get('/show',[estadoTicketsController::class,'showEstadoTicket']);
